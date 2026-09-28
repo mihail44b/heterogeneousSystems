@@ -1,50 +1,124 @@
-#include <Eigen/Dense>
 #include <benchmark/benchmark.h>
-#include <hsys/vector.cuh>
 
+#include <Eigen/Dense>
+
+#include <cuda_runtime.h>
+
+#include <cstdint>
 #include <vector>
 
-// ═══════════════════════════════════════════════
-// Бенчмарк CUDA Vector operator+
-// ═══════════════════════════════════════════════
+#include "functions/vector_add.hpp"
+#include "utils/cuda_check.hpp"
+#include "vector.hpp"
+
+using hsys::work1::core::utils::cuda_check;
+using hsys::work1::core::Vector;
+using hsys::work1::core::vector_add;
+
+// ============================================================
+// CUDA Vector Add
+// ============================================================
 
 static void BM_CudaVectorAdd(benchmark::State& state) {
-  std::size_t n = state.range(0);
+  const std::size_t n = static_cast<std::size_t>(state.range(0));
 
-  // Создаём векторы ЗАРАНЕЕ, до замера
-  // Мы измеряем только скорость сложения, а не аллокации
-  std::vector<float> host_data(n, 1.0f);
-  hsys::Vector<float> a(host_data);
-  hsys::Vector<float> b(host_data);
+  // ----------------------------------------------------------
+  // Подготовка.
+  //
+  // Всё это происходит ДО benchmark loop:
+  //   - host allocation
+  //   - device allocation
+  //   - Host -> Device copy
+  // ----------------------------------------------------------
 
-  // state — объект Google Benchmark
-  // Цикл for повторяет операцию много раз для точного замера
+  std::vector<float> host_a(n, 1.0f);
+  std::vector<float> host_b(n, 2.0f);
+
+  Vector<float> a(n);
+  Vector<float> b(n);
+  Vector<float> c(n);
+
+  a.data().copy_from_host(host_a.data());
+  b.data().copy_from_host(host_b.data());
+
+  // ----------------------------------------------------------
+  // CUDA Events
+  // ----------------------------------------------------------
+
+  cudaEvent_t start{};
+  cudaEvent_t stop{};
+
+  cuda_check(cudaEventCreate(&start));
+  cuda_check(cudaEventCreate(&stop));
+
   for (auto _ : state) {
-    hsys::Vector<float> c = a + b;
-    // benchmark::DoNotOptimize не даёт компилятору
-    // выбросить результат как "неиспользуемый"
-    benchmark::DoNotOptimize(c);
+
+    cuda_check(cudaEventRecord(start));
+
+    // --------------------------------------------------------
+    // Измеряем ТОЛЬКО vector addition.
+    //
+    // Здесь НЕТ cudaMalloc/cudaFree.
+    // --------------------------------------------------------
+
+    vector_add(a, b, c);
+
+    cuda_check(cudaEventRecord(stop));
+    cuda_check(cudaEventSynchronize(stop));
+
+    float elapsed_ms = 0.0f;
+
+    cuda_check(cudaEventElapsedTime(&elapsed_ms, start, stop));
+
+    // Google Benchmark получает время одной итерации
+    // в секундах.
+    state.SetIterationTime(static_cast<double>(elapsed_ms) / 1000.0);
   }
+
+  cuda_check(cudaEventDestroy(start));
+  cuda_check(cudaEventDestroy(stop));
+
+  state.SetItemsProcessed(
+      static_cast<int64_t>(state.iterations()) * static_cast<int64_t>(n));
 }
 
-// ═══════════════════════════════════════════════
-// Бенчмарк Eigen (CPU) — для сравнения
-// ═══════════════════════════════════════════════
+// ============================================================
+// Eigen Vector Add
+// ============================================================
 
 static void BM_EigenVectorAdd(benchmark::State& state) {
-  std::size_t n = state.range(0);
+  const Eigen::Index n = static_cast<Eigen::Index>(state.range(0));
+
+  // ----------------------------------------------------------
+  // Подготовка ДО benchmark loop.
+  // ----------------------------------------------------------
 
   Eigen::VectorXf a = Eigen::VectorXf::Ones(n);
-  Eigen::VectorXf b = Eigen::VectorXf::Ones(n);
+
+  Eigen::VectorXf b = Eigen::VectorXf::Constant(n, 2.0f);
+
+  Eigen::VectorXf c(n);
+
+  // ----------------------------------------------------------
+  // Измерение Eigen.
+  // ----------------------------------------------------------
 
   for (auto _ : state) {
-    Eigen::VectorXf c = a + b;
-    benchmark::DoNotOptimize(c);
+    c.noalias() = a + b;
+
+    benchmark::DoNotOptimize(c.data());
   }
+
+  state.SetItemsProcessed(
+      static_cast<int64_t>(state.iterations()) * static_cast<int64_t>(n));
 }
 
-// Размеры из задания: 8^1, 8^2, ..., 8^8
-// RangeMultiplier(8) — каждый следующий размер в 8 раз больше
-// Range(8, 8^8) — от 8 до 16'777'216
-BENCHMARK(BM_CudaVectorAdd)->RangeMultiplier(8)->Range(8, 1 << 24);
-BENCHMARK(BM_EigenVectorAdd)->RangeMultiplier(8)->Range(8, 1 << 24);
+// ============================================================
+// Registration
+// ============================================================
+
+BENCHMARK(BM_CudaVectorAdd)->RangeMultiplier(2)->Range(8, 1 << 20)->UseManualTime();
+
+BENCHMARK(BM_EigenVectorAdd)->RangeMultiplier(2)->Range(8, 1 << 20);
+
+BENCHMARK_MAIN();
