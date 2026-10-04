@@ -1,14 +1,20 @@
-If:
-    PathMatch: .*\.(cu|cuh)$
 CompileFlags:
+    CompilationDatabase: build
     Compiler: /usr/bin/clang++
     Add:
-        # - --cuda-path=/opt/cuda  # if you use Arch Linux
-        - --cuda-path=/usr/local/cuda # if you use Debian
-        - -Wno-unknown-cuda-version
-        - --cuda-gpu-arch=sm_75
-        - -xcuda
+        - --cuda-path=/usr/local/cuda
+        - --cuda-host-only
+        - -DEIGEN_NO_CUDA=1
+        - -D_NV_RSQRT_SPECIFIER=
+        - -D__CUDA_NO_GLOBAL_OPERATOR_NEW__
+        - -DBENCHMARK_STATIC_DEFINE
+        - -Iwork1/core/include
+        - -Ibuild/_deps/eigen-src
+        - -Ibuild/_deps/benchmark-src/include
+        - -Ibuild/_deps/googletest-src/googletest/include
         - -std=c++20
+        - -Wno-unknown-cuda-version
+        - -Wno-ignored-pragmas
     Remove:
         - -forward-unknown-to-host-compiler
         - --generate-code=*
@@ -20,3 +26,10 @@ CompileFlags:
         - -fdeps-format=*
         - -static-global-template-stub=*
         - --expt-relaxed-constexpr
+        - --cuda-gpu-arch=*
+        - -xcuda
+
+Diagnostics:
+    Suppress:
+        - ovl_no_viable_function_in_call
+        - ref_bad_target
