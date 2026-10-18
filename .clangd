@@ -4,6 +4,7 @@ CompileFlags:
     Add:
         - --cuda-path=/usr/local/cuda
         - --cuda-host-only
+        - -I/usr/local/cuda/include
         - -DEIGEN_NO_CUDA=1
         - -D_NV_RSQRT_SPECIFIER=
         - -D__CUDA_NO_GLOBAL_OPERATOR_NEW__
