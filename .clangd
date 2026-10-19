@@ -11,6 +11,8 @@ CompileFlags:
         - -D__host__=
         - -D__device__=
         - -D__global__=
+        - -D__shared__=
+        - -D__syncthreads()=(void)0
         - -D__device_builtin__=
         - -DEIGEN_NO_CUDA=1
         - -D_NV_RSQRT_SPECIFIER=
@@ -18,6 +20,7 @@ CompileFlags:
         - -DBENCHMARK_STATIC_DEFINE
         - -Iwork1/core/include
         - -Iwork2/core/include
+        - -Iwork3/core/include
         - -Ibuild/_deps/eigen-src
         - -Ibuild/_deps/benchmark-src/include
         - -Ibuild/_deps/googletest-src/googletest/include
