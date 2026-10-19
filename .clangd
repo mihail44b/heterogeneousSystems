@@ -17,6 +17,7 @@ CompileFlags:
         - -D__CUDA_NO_GLOBAL_OPERATOR_NEW__
         - -DBENCHMARK_STATIC_DEFINE
         - -Iwork1/core/include
+        - -Iwork2/core/include
         - -Ibuild/_deps/eigen-src
         - -Ibuild/_deps/benchmark-src/include
         - -Ibuild/_deps/googletest-src/googletest/include

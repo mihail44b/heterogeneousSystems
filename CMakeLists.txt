@@ -14,3 +14,4 @@ include(cmake/deps/gbench.cmake)
 include(cmake/utils/cuda_setup_targets.cmake)
 
 add_subdirectory(work1)
+add_subdirectory(work2)
