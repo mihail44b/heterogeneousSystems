@@ -192,3 +192,8 @@ data/
 
 # Trash
 .Trash-*
+
+# benchmark plots
+
+*/results/*.html
+*/results/*.html
