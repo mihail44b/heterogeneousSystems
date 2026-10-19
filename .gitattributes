@@ -1,0 +1,6 @@
+
+*.html linguist-generated=true
+*.html linguist-vendored=true
+
+
+*.json linguist-generated=true
