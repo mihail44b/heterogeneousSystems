@@ -1,8 +1,8 @@
 {
   "context": {
-    "date": "2026-10-04T17:19:09+00:00",
-    "host_name": "1f65b3bfd5a7",
-    "executable": "./build_release/work1/benchmarks/hsys_benchmarks",
+    "date": "2026-10-19T06:29:32+00:00",
+    "host_name": "2e512192d087",
+    "executable": "./build/work1/benchmarks/hsys_benchmarks",
     "num_cpus": 12,
     "mhz_per_cpu": 3693,
     "cpu_scaling_enabled": false,
@@ -33,7 +33,7 @@
         "num_sharing": 12
       }
     ],
-    "load_avg": [0.129395,0.521484,0.3125],
+    "load_avg": [1.27686,1.3418,1.30273],
     "library_version": "v1.9.5",
     "library_build_type": "release",
     "json_schema_version": 1
@@ -48,11 +48,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 10000,
-      "real_time": 5.1748179136775192e+01,
-      "cpu_time": 9.8315897500000005e+01,
+      "iterations": 13551,
+      "real_time": 6.3032807014059564e+01,
+      "cpu_time": 1.2190280193343665e+02,
       "time_unit": "us",
-      "items_per_second": 1.5459481151704420e+05
+      "items_per_second": 1.2691803489277555e+05
     },
     {
       "name": "BM_CudaVectorAdd/64/manual_time",
@@ -63,11 +63,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 21669,
-      "real_time": 2.7257871431683952e+01,
-      "cpu_time": 4.8614450643776841e+01,
+      "iterations": 12031,
+      "real_time": 5.5757610146063364e+01,
+      "cpu_time": 1.1049354118527137e+02,
       "time_unit": "us",
-      "items_per_second": 2.3479456259232261e+06
+      "items_per_second": 1.1478253790351625e+06
     },
     {
       "name": "BM_CudaVectorAdd/512/manual_time",
@@ -78,11 +78,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 22595,
-      "real_time": 2.5750223661806825e+01,
-      "cpu_time": 4.4947761274618287e+01,
+      "iterations": 10000,
+      "real_time": 5.4539452789351458e+01,
+      "cpu_time": 1.0433545259999998e+02,
       "time_unit": "us",
-      "items_per_second": 1.9883322441171929e+07
+      "items_per_second": 9.3876996158634964e+06
     },
     {
       "name": "BM_CudaVectorAdd/4096/manual_time",
@@ -93,11 +93,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 23266,
-      "real_time": 2.7873855413542568e+01,
-      "cpu_time": 4.9893715636551185e+01,
+      "iterations": 10000,
+      "real_time": 6.3940515183471305e+01,
+      "cpu_time": 1.1706763740000001e+02,
       "time_unit": "us",
-      "items_per_second": 1.4694773791536388e+08
+      "items_per_second": 6.4059540156142198e+07
     },
     {
       "name": "BM_CudaVectorAdd/32768/manual_time",
@@ -108,11 +108,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 25794,
-      "real_time": 2.7502436850756574e+01,
-      "cpu_time": 4.9009357563774508e+01,
+      "iterations": 13905,
+      "real_time": 5.2212751090676775e+01,
+      "cpu_time": 1.0006792477526069e+02,
       "time_unit": "us",
-      "items_per_second": 1.1914580579829082e+09
+      "items_per_second": 6.2758616076545191e+08
     },
     {
       "name": "BM_CudaVectorAdd/262144/manual_time",
@@ -123,11 +123,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 24061,
-      "real_time": 2.9618320094400158e+01,
-      "cpu_time": 5.1351175304434570e+01,
+      "iterations": 13895,
+      "real_time": 5.5194240189034886e+01,
+      "cpu_time": 1.0692893400503783e+02,
       "time_unit": "us",
-      "items_per_second": 8.8507382986100788e+09
+      "items_per_second": 4.7494810890082445e+09
     },
     {
       "name": "BM_CudaVectorAdd/2097152/manual_time",
@@ -138,11 +138,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 17672,
-      "real_time": 3.7816937956343480e+01,
-      "cpu_time": 5.7620790289723871e+01,
+      "iterations": 9218,
+      "real_time": 7.2396993690430349e+01,
+      "cpu_time": 1.2900293979171184e+02,
       "time_unit": "us",
-      "items_per_second": 5.5455362420431503e+10
+      "items_per_second": 2.8967390676019299e+10
     },
     {
       "name": "BM_CudaVectorAdd/16777216/manual_time",
@@ -153,11 +153,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 1235,
-      "real_time": 5.7181585095672062e+02,
-      "cpu_time": 6.1945667044534343e+02,
+      "iterations": 1101,
+      "real_time": 6.4170399229706243e+02,
+      "cpu_time": 7.0602688283378791e+02,
       "time_unit": "us",
-      "items_per_second": 2.9340242967958271e+10
+      "items_per_second": 2.6144789811800587e+10
     },
     {
       "name": "BM_EigenVectorAdd/8",
@@ -168,11 +168,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 854115259,
-      "real_time": 8.4379263501711517e-04,
-      "cpu_time": 8.4374067715842032e-04,
+      "iterations": 818838814,
+      "real_time": 8.4984219250512801e-04,
+      "cpu_time": 8.4976419302957022e-04,
       "time_unit": "us",
-      "items_per_second": 9.4815862463128872e+09
+      "items_per_second": 9.4143764418673439e+09
     },
     {
       "name": "BM_EigenVectorAdd/64",
@@ -183,11 +183,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 189249310,
-      "real_time": 3.7918778250763175e-03,
-      "cpu_time": 3.7917281336455068e-03,
+      "iterations": 186720014,
+      "real_time": 3.8275701018253869e-03,
+      "cpu_time": 3.8273321680449318e-03,
       "time_unit": "us",
-      "items_per_second": 1.6878847254923851e+10
+      "items_per_second": 1.6721830557156034e+10
     },
     {
       "name": "BM_EigenVectorAdd/512",
@@ -198,11 +198,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 24582387,
-      "real_time": 2.8031513457176870e-02,
-      "cpu_time": 2.8030174449698443e-02,
+      "iterations": 24593937,
+      "real_time": 2.8416041278861253e-02,
+      "cpu_time": 2.8413934133441138e-02,
       "time_unit": "us",
-      "items_per_second": 1.8266029735876587e+10
+      "items_per_second": 1.8019328037978844e+10
     },
     {
       "name": "BM_EigenVectorAdd/4096",
@@ -213,11 +213,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 2085531,
-      "real_time": 3.3767289913220233e-01,
-      "cpu_time": 3.3765450861195639e-01,
+      "iterations": 1979157,
+      "real_time": 3.5292749236236237e-01,
+      "cpu_time": 3.5291080899595145e-01,
       "time_unit": "us",
-      "items_per_second": 1.2130742802274431e+10
+      "items_per_second": 1.1606331955808668e+10
     },
     {
       "name": "BM_EigenVectorAdd/32768",
@@ -228,11 +228,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 263256,
-      "real_time": 2.5879937095452910e+00,
-      "cpu_time": 2.5878432780259550e+00,
+      "iterations": 269922,
+      "real_time": 2.7401412778640819e+00,
+      "cpu_time": 2.7399018346040669e+00,
       "time_unit": "us",
-      "items_per_second": 1.2662281475173378e+10
+      "items_per_second": 1.1959552559931471e+10
     },
     {
       "name": "BM_EigenVectorAdd/262144",
@@ -243,11 +243,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 25790,
-      "real_time": 2.7396755525399374e+01,
-      "cpu_time": 2.7395407832493156e+01,
+      "iterations": 23566,
+      "real_time": 3.0238030382824199e+01,
+      "cpu_time": 3.0236653271662629e+01,
       "time_unit": "us",
-      "items_per_second": 9.5689029928978157e+09
+      "items_per_second": 8.6697425685559502e+09
     },
     {
       "name": "BM_EigenVectorAdd/2097152",
@@ -258,11 +258,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 2046,
-      "real_time": 3.1947768132944901e+02,
-      "cpu_time": 3.1946160361681279e+02,
+      "iterations": 1463,
+      "real_time": 4.7927752495023992e+02,
+      "cpu_time": 4.7924290772385524e+02,
       "time_unit": "us",
-      "items_per_second": 6.5646449409159288e+09
+      "items_per_second": 4.3759687753342838e+09
     },
     {
       "name": "BM_EigenVectorAdd/16777216",
@@ -273,11 +273,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 95,
-      "real_time": 5.4858299473679790e+03,
-      "cpu_time": 5.4856200947368379e+03,
+      "iterations": 82,
+      "real_time": 6.5559177438866218e+03,
+      "cpu_time": 6.5556049634146166e+03,
       "time_unit": "us",
-      "items_per_second": 3.0583991800848279e+09
+      "items_per_second": 2.5592170506963029e+09
     }
   ]
 }

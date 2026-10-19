@@ -1,9 +1,7 @@
 #pragma once
 
 #include <cstddef>
-
 #include <cuda_runtime.h>
-
 #include "../utils/cuda_check.hpp"
 #include "kinds.hpp"
 

@@ -8,10 +8,10 @@ CompileFlags:
         - -I/usr/local/cuda/include
         - -include
         - /usr/local/cuda/include/cuda_runtime.h
-        - /usr/local/cuda/include/device_launch_parameters.h
         - -D__host__=
         - -D__device__=
         - -D__global__=
+        - -D__device_builtin__=
         - -DEIGEN_NO_CUDA=1
         - -D_NV_RSQRT_SPECIFIER=
         - -D__CUDA_NO_GLOBAL_OPERATOR_NEW__

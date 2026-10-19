@@ -7,9 +7,7 @@
 
 #include <vector>
 
-// ============================================================
-// Бенчмарк CUDA Vector (замер чистого времени ядра через CUDA Events API)
-// ============================================================
+// Бенчмарк CUDA Vector (CUDA Events API)
 
 static void BM_CudaVectorAdd(benchmark::State& state) {
   const std::size_t n = static_cast<std::size_t>(state.range(0));
@@ -49,9 +47,7 @@ static void BM_CudaVectorAdd(benchmark::State& state) {
       static_cast<int64_t>(state.iterations()) * static_cast<int64_t>(n));
 }
 
-// ============================================================
-// Бенчмарк Eigen (CPU) — эталон для сравнения
-// ============================================================
+// Бенчмарк Eigen (CPU)
 
 static void BM_EigenVectorAdd(benchmark::State& state) {
   const Eigen::Index n = static_cast<Eigen::Index>(state.range(0));

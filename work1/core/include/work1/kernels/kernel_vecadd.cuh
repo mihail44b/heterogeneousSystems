@@ -3,6 +3,9 @@
 #include "../entities/kinds.hpp"
 #include "../entities/vector_view.cuh"
 
+#include <cuda_runtime.h>
+#include <device_launch_parameters.h>
+
 namespace hsys::work1::core::kernels {
 
 template <AtomK AtomT>
