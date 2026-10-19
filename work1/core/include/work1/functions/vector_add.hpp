@@ -2,7 +2,7 @@
 
 #include "../entities/kinds.hpp"
 #include "../entities/vector.hpp"
-#include "../kernels/vector_add.cuh"
+#include "../kernels/kernel_vecadd.cuh"
 #include "../utils/cuda_check.hpp"
 
 #include <cuda_runtime.h>
@@ -26,10 +26,11 @@ void vector_add(
   }
 
   constexpr unsigned int block_size = 256;
-  const unsigned int grid_size =
-      static_cast<unsigned int>((lhs.size() + block_size - 1) / block_size);
+  const unsigned int grid_size
+      = static_cast<unsigned int>((lhs.size() + block_size - 1) / block_size);
 
-  kernels::vector_add<<<grid_size, block_size>>>(lhs.view(), rhs.view(), result.view());
+  kernels::kernel_vecadd<<<grid_size, block_size>>>(
+      lhs.view(), rhs.view(), result.view());
 
   utils::cuda_check(cudaGetLastError());
   utils::cuda_check(cudaDeviceSynchronize());
