@@ -1,6 +1,6 @@
 {
   "context": {
-    "date": "2026-10-19T17:16:02+00:00",
+    "date": "2026-10-21T18:35:00+00:00",
     "host_name": "2e512192d087",
     "executable": "./build/work3/benchmarks/hsys_benchmarks",
     "num_cpus": 12,
@@ -33,7 +33,7 @@
         "num_sharing": 12
       }
     ],
-    "load_avg": [1.38916,1.4292,1.35352],
+    "load_avg": [2.79395,0.745117,0.25],
     "library_version": "v1.9.5",
     "library_build_type": "release",
     "json_schema_version": 1
@@ -48,11 +48,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 10000,
-      "real_time": 5.5731503981351914e+01,
-      "cpu_time": 1.0263744450000000e+02,
+      "iterations": 10237,
+      "real_time": 5.6653819673467297e+01,
+      "cpu_time": 1.0977613724724043e+02,
       "time_unit": "us",
-      "items_per_second": 1.4699047064549148e+08
+      "items_per_second": 1.4459748781663460e+08
     },
     {
       "name": "BM_CudaMatrixMulNaive/32/manual_time",
@@ -63,11 +63,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 14229,
-      "real_time": 6.0478506690696562e+01,
-      "cpu_time": 1.1640722383863940e+02,
+      "iterations": 10000,
+      "real_time": 5.8291260796226489e+01,
+      "cpu_time": 1.1152042730000002e+02,
       "time_unit": "us",
-      "items_per_second": 1.0836246393312724e+09
+      "items_per_second": 1.1242851690770514e+09
     },
     {
       "name": "BM_CudaMatrixMulNaive/64/manual_time",
@@ -78,11 +78,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 11100,
-      "real_time": 5.7518645027769850e+01,
-      "cpu_time": 1.1355158477477471e+02,
+      "iterations": 11607,
+      "real_time": 4.9056115748552038e+01,
+      "cpu_time": 8.9173957956405602e+01,
       "time_unit": "us",
-      "items_per_second": 9.1150965003934841e+09
+      "items_per_second": 1.0687515552339161e+10
     },
     {
       "name": "BM_CudaMatrixMulNaive/128/manual_time",
@@ -93,11 +93,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 12303,
-      "real_time": 5.8105898002728765e+01,
-      "cpu_time": 1.1386827017800536e+02,
+      "iterations": 17906,
+      "real_time": 3.5425703111679411e+01,
+      "cpu_time": 5.8813094661007447e+01,
       "time_unit": "us",
-      "items_per_second": 7.2183791046530716e+10
+      "items_per_second": 1.1839719840640765e+11
     },
     {
       "name": "BM_CudaMatrixMulNaive/256/manual_time",
@@ -108,11 +108,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 7412,
-      "real_time": 9.5721761438707873e+01,
-      "cpu_time": 1.5120757123583371e+02,
+      "iterations": 10958,
+      "real_time": 6.4001617803598663e+01,
+      "cpu_time": 8.8825253330899812e+01,
       "time_unit": "us",
-      "items_per_second": 3.5054131365400562e+11
+      "items_per_second": 5.2427474728792426e+11
     },
     {
       "name": "BM_CudaMatrixMulNaive/512/manual_time",
@@ -123,11 +123,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 2836,
-      "real_time": 2.7429790700272218e+02,
-      "cpu_time": 3.3624976163610734e+02,
+      "iterations": 2717,
+      "real_time": 2.6462155638655463e+02,
+      "cpu_time": 3.1947278395288924e+02,
       "time_unit": "us",
-      "items_per_second": 9.7862743078581348e+11
+      "items_per_second": 1.0144126565708582e+12
     },
     {
       "name": "BM_CudaMatrixMulNaive/1024/manual_time",
@@ -138,11 +138,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 434,
-      "real_time": 1.5644323685751533e+03,
-      "cpu_time": 1.6331606267281106e+03,
+      "iterations": 446,
+      "real_time": 1.5606595884524113e+03,
+      "cpu_time": 1.6303103565022420e+03,
       "time_unit": "us",
-      "items_per_second": 1.3726919048318308e+12
+      "items_per_second": 1.3760102868617864e+12
     },
     {
       "name": "BM_CudaMatrixMulShmem/16/manual_time",
@@ -153,11 +153,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 14232,
-      "real_time": 5.1731993230803248e+01,
-      "cpu_time": 9.9562132588533018e+01,
+      "iterations": 21796,
+      "real_time": 2.9643683605469764e+01,
+      "cpu_time": 5.2253224353092321e+01,
       "time_unit": "us",
-      "items_per_second": 1.5835461748885724e+08
+      "items_per_second": 2.7634892171391398e+08
     },
     {
       "name": "BM_CudaMatrixMulShmem/32/manual_time",
@@ -168,11 +168,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 13502,
-      "real_time": 5.9552407633403313e+01,
-      "cpu_time": 1.1080004895571028e+02,
+      "iterations": 21363,
+      "real_time": 3.0687120731325354e+01,
+      "cpu_time": 5.3570555212282926e+01,
       "time_unit": "us",
-      "items_per_second": 1.1004760782037711e+09
+      "items_per_second": 2.1356190622700217e+09
     },
     {
       "name": "BM_CudaMatrixMulShmem/64/manual_time",
@@ -183,11 +183,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 14045,
-      "real_time": 5.3893659486252709e+01,
-      "cpu_time": 1.0179985532217863e+02,
+      "iterations": 22058,
+      "real_time": 3.4167574205856404e+01,
+      "cpu_time": 5.7957019176715981e+01,
       "time_unit": "us",
-      "items_per_second": 9.7281944666187725e+09
+      "items_per_second": 1.5344607048812256e+10
     },
     {
       "name": "BM_CudaMatrixMulShmem/128/manual_time",
@@ -198,11 +198,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 10000,
-      "real_time": 5.2974031966552140e+01,
-      "cpu_time": 1.0043724050000016e+02,
+      "iterations": 20800,
+      "real_time": 3.5684455385109345e+01,
+      "cpu_time": 6.0134886153846097e+01,
       "time_unit": "us",
-      "items_per_second": 7.9176604919336487e+10
+      "items_per_second": 1.1753868609552126e+11
     },
     {
       "name": "BM_CudaMatrixMulShmem/256/manual_time",
@@ -213,11 +213,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 9456,
-      "real_time": 7.9569055800453654e+01,
-      "cpu_time": 1.2966468189509331e+02,
+      "iterations": 13134,
+      "real_time": 5.7664362989390241e+01,
+      "cpu_time": 8.2811197350388539e+01,
       "time_unit": "us",
-      "items_per_second": 4.2170202552295081e+11
+      "items_per_second": 5.8189200852134155e+11
     },
     {
       "name": "BM_CudaMatrixMulShmem/512/manual_time",
@@ -228,11 +228,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 3573,
-      "real_time": 1.8797770837358925e+02,
-      "cpu_time": 2.3077621662468530e+02,
+      "iterations": 3524,
+      "real_time": 2.0776926227565119e+02,
+      "cpu_time": 2.5593553632236126e+02,
       "time_unit": "us",
-      "items_per_second": 1.4280174937897849e+12
+      "items_per_second": 1.2919883001936155e+12
     },
     {
       "name": "BM_CudaMatrixMulShmem/1024/manual_time",
@@ -243,11 +243,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 629,
-      "real_time": 1.1075675176702348e+03,
-      "cpu_time": 1.1524541717011080e+03,
+      "iterations": 579,
+      "real_time": 1.2118201014909112e+03,
+      "cpu_time": 1.2736063575129556e+03,
       "time_unit": "us",
-      "items_per_second": 1.9389189496250540e+12
+      "items_per_second": 1.7721142316074268e+12
     }
   ]
 }
