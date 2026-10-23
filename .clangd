@@ -7,7 +7,7 @@ CompileFlags:
         - c++
         - -I/usr/local/cuda/include
         - -include
-        - /usr/local/cuda/include/cuda_runtime.h
+        - /workspace/cmake/utils/clangd_wmma.h
         - -D__host__=
         - -D__device__=
         - -D__global__=
@@ -21,6 +21,7 @@ CompileFlags:
         - -Iwork1/core/include
         - -Iwork2/core/include
         - -Iwork3/core/include
+        - -Iwork4/core/include
         - -Ibuild/_deps/eigen-src
         - -Ibuild/_deps/benchmark-src/include
         - -Ibuild/_deps/googletest-src/googletest/include
